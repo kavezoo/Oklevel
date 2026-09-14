@@ -1,13 +1,13 @@
 * HMG-IDE UNICODE Form Designer Generated Code
 * (c) Roberto Lopez - http://sites.google.com/site/hmgweb
 
-DEFINE WINDOW TEMPLATE AT 301 , 338 WIDTH 1072 HEIGHT 706 VIRTUAL WIDTH Nil VIRTUAL HEIGHT Nil TITLE "Országos Lassúsági Hagyományőrző Piapszívóverseny oklevél nyomtató program • v1.20 • zsfoto@gmail.com" ICON NIL MAIN CURSOR NIL ON INIT Main_OnInit() ON RELEASE Main_OnRelease() ON INTERACTIVECLOSE Nil ON MOUSECLICK Nil ON MOUSEDRAG Nil ON MOUSEMOVE Nil ON SIZE Nil ON MAXIMIZE Nil ON MINIMIZE Nil ON PAINT Nil BACKCOLOR Nil NOTIFYICON NIL NOTIFYTOOLTIP NIL ON NOTIFYCLICK Nil ON GOTFOCUS Nil ON LOSTFOCUS Nil ON SCROLLUP Nil ON SCROLLDOWN Nil ON SCROLLLEFT Nil ON SCROLLRIGHT Nil ON HSCROLLBOX Nil ON VSCROLLBOX Nil
+DEFINE WINDOW TEMPLATE AT 146 , 450 WIDTH 1240 HEIGHT 880 VIRTUAL WIDTH Nil VIRTUAL HEIGHT Nil TITLE "Országos Lassúsági Hagyományőrző Piapszívóverseny oklevél nyomtató program • v1.30 • zsfoto@gmail.com" ICON NIL MAIN CURSOR NIL ON INIT Main_OnInit() ON RELEASE Main_OnRelease() ON INTERACTIVECLOSE Nil ON MOUSECLICK Nil ON MOUSEDRAG Nil ON MOUSEMOVE Nil ON SIZE Nil ON MAXIMIZE Nil ON MINIMIZE Nil ON PAINT Nil BACKCOLOR Nil NOTIFYICON NIL NOTIFYTOOLTIP NIL ON NOTIFYCLICK Nil ON GOTFOCUS Nil ON LOSTFOCUS Nil ON SCROLLUP Nil ON SCROLLDOWN Nil ON SCROLLLEFT Nil ON SCROLLRIGHT Nil ON HSCROLLBOX Nil ON VSCROLLBOX Nil
 
     DEFINE BUTTON Button_PdfLetrehozas
-        ROW    560
-        COL    430
-        WIDTH  190
-        HEIGHT 50
+        ROW    790
+        COL    530
+        WIDTH  220
+        HEIGHT 44
         ACTION Main_CreatePdf()
         CAPTION "PDF létrehozása"
         FONTNAME "Arial"
@@ -29,81 +29,11 @@ DEFINE WINDOW TEMPLATE AT 301 , 338 WIDTH 1072 HEIGHT 706 VIRTUAL WIDTH Nil VIRT
         PICTALIGNMENT TOP
     END BUTTON
 
-    DEFINE LABEL Label_XlsxFajl
-        ROW    20
-        COL    170
-        WIDTH  790
-        HEIGHT 30
-        VALUE ""
-        FONTNAME "Arial"
-        FONTSIZE 12
-        TOOLTIP ""
-        FONTBOLD .T.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        HELPID Nil
-        VISIBLE .T.
-        TRANSPARENT .F.
-        ACTION Nil
-        AUTOSIZE .F.
-        BACKCOLOR NIL
-        FONTCOLOR {0,64,128}
-    END LABEL
-
-    DEFINE BUTTON Button_FajlValaszt
-        ROW    20
-        COL    970
-        WIDTH  36
-        HEIGHT 28
-        ACTION Main_SelectFile()
-        CAPTION "..."
-        FONTNAME "Arial"
-        FONTSIZE 14
-        TOOLTIP ""
-        FONTBOLD .F.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        ONGOTFOCUS Nil
-        ONLOSTFOCUS Nil
-        HELPID Nil
-        FLAT .F.
-        TABSTOP .T.
-        VISIBLE .T.
-        TRANSPARENT .F.
-        MULTILINE .F.
-        PICTURE Nil
-        PICTALIGNMENT TOP
-    END BUTTON
-
-    DEFINE LABEL Label_ImportFelirat
-        ROW    20
-        COL    20
-        WIDTH  140
-        HEIGHT 20
-        VALUE "Importálandó fájl:"
-        FONTNAME "Arial"
-        FONTSIZE 12
-        TOOLTIP ""
-        FONTBOLD .T.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        HELPID Nil
-        VISIBLE .T.
-        TRANSPARENT .F.
-        ACTION Nil
-        AUTOSIZE .F.
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-    END LABEL
-
     DEFINE PROGRESSBAR ProgressBar_Pdf
-        ROW    640
+        ROW    840
         COL    0
-        WIDTH  1072
-        HEIGHT 30
+        WIDTH  1280
+        HEIGHT 24
         RANGEMIN 0
         RANGEMAX 100
         VALUE 0
@@ -116,350 +46,5188 @@ DEFINE WINDOW TEMPLATE AT 301 , 338 WIDTH 1072 HEIGHT 706 VIRTUAL WIDTH Nil VIRT
         FORECOLOR NIL
     END PROGRESSBAR
 
-    DEFINE TEXTBOX Text_VersenyCim
-        ROW    90
-        COL    30
-        WIDTH  980
-        HEIGHT 30
-        FONTNAME "Arial"
-        FONTSIZE 14
-        TOOLTIP ""
-        ONCHANGE Nil
-        ONGOTFOCUS Nil
-        ONLOSTFOCUS Nil
-        FONTBOLD .T.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        ONENTER Nil
-        HELPID Nil
-        TABSTOP .T.
-        VISIBLE .T.
-        READONLY .F.
-        RIGHTALIGN .F.
-        DISABLEDBACKCOLOR Nil
-        DISABLEDFONTCOLOR Nil
-        CASECONVERT NONE
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-        INPUTMASK Nil
-        FORMAT Nil
-        VALUE "Lassúsági pipaszívás magyar bajnoka a mai versenyünkön"
-    END TEXTBOX
+    DEFINE TAB Tab_Main AT 8 , 8 WIDTH 1202 HEIGHT 752 VALUE 1 FONT "Arial" SIZE 10 TOOLTIP "" ON CHANGE Nil
 
-    DEFINE TEXTBOX Text_KlubToldalek
-        ROW    135
-        COL    360
-        WIDTH  400
-        HEIGHT 30
-        FONTNAME "Arial"
-        FONTSIZE 14
-        TOOLTIP ""
-        ONCHANGE Nil
-        ONGOTFOCUS Nil
-        ONLOSTFOCUS Nil
-        FONTBOLD .T.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        ONENTER Nil
-        HELPID Nil
-        TABSTOP .T.
-        VISIBLE .T.
-        READONLY .F.
-        RIGHTALIGN .F.
-        DISABLEDBACKCOLOR Nil
-        DISABLEDFONTCOLOR Nil
-        CASECONVERT NONE
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-        INPUTMASK Nil
-        FORMAT Nil
-        VALUE "csapatának tagjaként"
-    END TEXTBOX
+        PAGE "Alapadatok"
 
-    DEFINE LABEL Label_KlubMinta
-        ROW    140
-        COL    40
-        WIDTH  300
-        HEIGHT 30
-        VALUE "A(Z) XYZ Pipaklub"
-        FONTNAME "Arial"
-        FONTSIZE 12
-        TOOLTIP ""
-        FONTBOLD .F.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        HELPID Nil
-        VISIBLE .T.
-        TRANSPARENT .F.
-        ACTION Nil
-        AUTOSIZE .F.
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-        RIGHTALIGN .T. 
-    END LABEL
+            DEFINE TEXTBOX Text_VersenyCim
+                ROW    80
+                COL    30
+                WIDTH  1100
+                HEIGHT 30
+                FONTNAME "Arial"
+                FONTSIZE 14
+                TOOLTIP ""
+                ONCHANGE Nil
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE "Lassúsági pipaszívás magyar bajnoka a mai versenyünkön"
+            END TEXTBOX
 
-    DEFINE LABEL Label_NevMinta
-        ROW    190
-        COL    210
-        WIDTH  540
-        HEIGHT 40
-        VALUE "GIPSZ JAKAB JÓZSEF"
-        FONTNAME "Arial"
-        FONTSIZE 16
-        TOOLTIP ""
-        FONTBOLD .T.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        HELPID Nil
-        VISIBLE .T.
-        TRANSPARENT .F.
-        ACTION Nil
-        AUTOSIZE .F.
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-        CENTERALIGN .T. 
-    END LABEL
+            DEFINE LABEL Label_KlubMinta
+                ROW    130
+                COL    40
+                WIDTH  300
+                HEIGHT 30
+                VALUE "A(Z) XYZ Pipaklub"
+                FONTNAME "Arial"
+                FONTSIZE 12
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                RIGHTALIGN .T. 
+            END LABEL
 
-    DEFINE TEXTBOX Text_HelyezesSzoveg
-        ROW    240
-        COL    370
-        WIDTH  390
-        HEIGHT 30
-        FONTNAME "Arial"
-        FONTSIZE 14
-        TOOLTIP ""
-        ONCHANGE Nil
-        ONGOTFOCUS Nil
-        ONLOSTFOCUS Nil
-        FONTBOLD .T.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        ONENTER Nil
-        HELPID Nil
-        TABSTOP .T.
-        VISIBLE .T.
-        READONLY .F.
-        RIGHTALIGN .F.
-        DISABLEDBACKCOLOR Nil
-        DISABLEDFONTCOLOR Nil
-        CASECONVERT NONE
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-        INPUTMASK Nil
-        FORMAT Nil
-        VALUE "helyezést ért el"
-    END TEXTBOX
+            DEFINE TEXTBOX Text_KlubToldalek
+                ROW    125
+                COL    360
+                WIDTH  400
+                HEIGHT 30
+                FONTNAME "Arial"
+                FONTSIZE 14
+                TOOLTIP ""
+                ONCHANGE Nil
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE "csapatának tagjaként"
+            END TEXTBOX
 
-    DEFINE LABEL Label_HelyezesMinta
-        ROW    240
-        COL    240
-        WIDTH  120
-        HEIGHT 24
-        VALUE "6."
-        FONTNAME "Arial"
-        FONTSIZE 16
-        TOOLTIP ""
-        FONTBOLD .F.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        HELPID Nil
-        VISIBLE .T.
-        TRANSPARENT .F.
-        ACTION Nil
-        AUTOSIZE .F.
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-        RIGHTALIGN .T. 
-    END LABEL
+            DEFINE LABEL Label_NevMinta
+                ROW    175
+                COL    210
+                WIDTH  740
+                HEIGHT 40
+                VALUE "GIPSZ JAKAB JÓZSEF"
+                FONTNAME "Arial"
+                FONTSIZE 16
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                CENTERALIGN .T. 
+            END LABEL
 
-    DEFINE LABEL Label_IdoMinta
-        ROW    290
-        COL    360
-        WIDTH  300
-        HEIGHT 30
-        VALUE "1 óra 13 perc és 40 mp"
-        FONTNAME "Arial"
-        FONTSIZE 20
-        TOOLTIP ""
-        FONTBOLD .T.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        HELPID Nil
-        VISIBLE .T.
-        TRANSPARENT .F.
-        ACTION Nil
-        AUTOSIZE .F.
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-        CENTERALIGN .T. 
-    END LABEL
+            DEFINE LABEL Label_HelyezesMinta
+                ROW    230
+                COL    240
+                WIDTH  120
+                HEIGHT 24
+                VALUE "6."
+                FONTNAME "Arial"
+                FONTSIZE 16
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                RIGHTALIGN .T. 
+            END LABEL
 
-    DEFINE LABEL Label_IdoFelirat
-        ROW    330
-        COL    380
-        WIDTH  220
-        HEIGHT 30
-        VALUE "időeredménnyel"
-        FONTNAME "Arial"
-        FONTSIZE 16
-        TOOLTIP ""
-        FONTBOLD .F.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        HELPID Nil
-        VISIBLE .T.
-        TRANSPARENT .F.
-        ACTION Nil
-        AUTOSIZE .F.
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-        CENTERALIGN .T. 
-    END LABEL
+            DEFINE TEXTBOX Text_HelyezesSzoveg
+                ROW    230
+                COL    370
+                WIDTH  390
+                HEIGHT 30
+                FONTNAME "Arial"
+                FONTSIZE 14
+                TOOLTIP ""
+                ONCHANGE Nil
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE "helyezést ért el"
+            END TEXTBOX
 
-    DEFINE TEXTBOX Text_Datum
-        ROW    380
-        COL    370
-        WIDTH  390
-        HEIGHT 30
-        FONTNAME "Arial"
-        FONTSIZE 14
-        TOOLTIP ""
-        ONCHANGE Nil
-        ONGOTFOCUS Nil
-        ONLOSTFOCUS Nil
-        FONTBOLD .T.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        ONENTER Nil
-        HELPID Nil
-        TABSTOP .T.
-        VISIBLE .T.
-        READONLY .F.
-        RIGHTALIGN .F.
-        DISABLEDBACKCOLOR Nil
-        DISABLEDFONTCOLOR Nil
-        CASECONVERT NONE
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-        INPUTMASK Nil
-        FORMAT Nil
-        VALUE "Ibafa, 2026. április 11."
-    END TEXTBOX
+            DEFINE LABEL Label_IdoMinta
+                ROW    280
+                COL    360
+                WIDTH  400
+                HEIGHT 30
+                VALUE "1:32:45"
+                FONTNAME "Arial"
+                FONTSIZE 20
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                CENTERALIGN .T. 
+            END LABEL
 
-    DEFINE LABEL Label_AlairasVonalBal
-        ROW    480
-        COL    40
-        WIDTH  460
-        HEIGHT 30
-        VALUE "........................................................................................................................................................"
-        FONTNAME "Arial"
-        FONTSIZE 9
-        TOOLTIP ""
-        FONTBOLD .F.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        HELPID Nil
-        VISIBLE .T.
-        TRANSPARENT .F.
-        ACTION Nil
-        AUTOSIZE .F.
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-    END LABEL
+            DEFINE LABEL Label_IdoFelirat
+                ROW    322
+                COL    452
+                WIDTH  220
+                HEIGHT 30
+                VALUE "időeredménnyel"
+                FONTNAME "Arial"
+                FONTSIZE 16
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                CENTERALIGN .T. 
+            END LABEL
 
-    DEFINE LABEL Label_AlairasVonalJobb
-        ROW    480
-        COL    560
-        WIDTH  470
-        HEIGHT 30
-        VALUE "........................................................................................................................................................"
-        FONTNAME "Arial"
-        FONTSIZE 9
-        TOOLTIP ""
-        FONTBOLD .F.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        HELPID Nil
-        VISIBLE .T.
-        TRANSPARENT .F.
-        ACTION Nil
-        AUTOSIZE .F.
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-    END LABEL
+            DEFINE TEXTBOX Text_Datum
+                ROW    370
+                COL    370
+                WIDTH  390
+                HEIGHT 30
+                FONTNAME "Arial"
+                FONTSIZE 14
+                TOOLTIP ""
+                ONCHANGE Nil
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE "Ibafa, 2026. április 11."
+            END TEXTBOX
 
-    DEFINE TEXTBOX Text_AlairasBal
-        ROW    500
-        COL    40
-        WIDTH  450
-        HEIGHT 30
-        FONTNAME "Arial"
-        FONTSIZE 14
-        TOOLTIP ""
-        ONCHANGE Nil
-        ONGOTFOCUS Nil
-        ONLOSTFOCUS Nil
-        FONTBOLD .T.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        ONENTER Nil
-        HELPID Nil
-        TABSTOP .T.
-        VISIBLE .T.
-        READONLY .F.
-        RIGHTALIGN .F.
-        DISABLEDBACKCOLOR Nil
-        DISABLEDFONTCOLOR Nil
-        CASECONVERT NONE
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-        INPUTMASK Nil
-        FORMAT Nil
-        VALUE "Magyar Pipaklub Egyesület"
-    END TEXTBOX
+            DEFINE LABEL Label_AlairasVonalBal
+                ROW    460
+                COL    90
+                WIDTH  520
+                HEIGHT 30
+                VALUE "........................................................................................................................................................"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
 
-    DEFINE TEXTBOX Text_AlairasJobb
-        ROW    500
-        COL    560
-        WIDTH  450
-        HEIGHT 30
-        FONTNAME "Arial"
-        FONTSIZE 14
-        TOOLTIP ""
-        ONCHANGE Nil
-        ONGOTFOCUS Nil
-        ONLOSTFOCUS Nil
-        FONTBOLD .T.
-        FONTITALIC .F.
-        FONTUNDERLINE .F.
-        FONTSTRIKEOUT .F.
-        ONENTER Nil
-        HELPID Nil
-        TABSTOP .T.
-        VISIBLE .T.
-        READONLY .F.
-        RIGHTALIGN .F.
-        DISABLEDBACKCOLOR Nil
-        DISABLEDFONTCOLOR Nil
-        CASECONVERT NONE
-        BACKCOLOR NIL
-        FONTCOLOR NIL
-        INPUTMASK Nil
-        FORMAT Nil
-        VALUE "Ibafai Pipaklub"
-    END TEXTBOX
+            DEFINE LABEL Label_AlairasVonalJobb
+                ROW    460
+                COL    630
+                WIDTH  520
+                HEIGHT 30
+                VALUE "........................................................................................................................................................"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE TEXTBOX Text_AlairasBal
+                ROW    490
+                COL    92
+                WIDTH  450
+                HEIGHT 30
+                FONTNAME "Arial"
+                FONTSIZE 14
+                TOOLTIP ""
+                ONCHANGE Nil
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE "Magyar Pipaklub Egyesület"
+            END TEXTBOX
+
+            DEFINE TEXTBOX Text_AlairasJobb
+                ROW    490
+                COL    630
+                WIDTH  450
+                HEIGHT 30
+                FONTNAME "Arial"
+                FONTSIZE 14
+                TOOLTIP ""
+                ONCHANGE Nil
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE "Ibafai Pipaklub"
+            END TEXTBOX
+
+        END PAGE 
+
+        PAGE "Nyomtatandók"
+
+            DEFINE LABEL Label_ImportFelirat
+                ROW    30
+                COL    20
+                WIDTH  140
+                HEIGHT 20
+                VALUE "Importálandó fájl:"
+                FONTNAME "Arial"
+                FONTSIZE 12
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE LABEL Label_XlsxFajl
+                ROW    30
+                COL    170
+                WIDTH  900
+                HEIGHT 28
+                VALUE ""
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR {0,64,128}
+            END LABEL
+
+            DEFINE BUTTON Button_FajlValaszt
+                ROW    32
+                COL    1152
+                WIDTH  36
+                HEIGHT 28
+                ACTION Main_SelectFile()
+                CAPTION "..."
+                FONTNAME "Arial"
+                FONTSIZE 14
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE GRID Grid_Lista
+                ROW    62
+                COL    22
+                WIDTH  1170
+                HEIGHT 620
+                ITEMS { {"","","","","",""} }
+                VALUE Nil
+                WIDTHS {40,90,280,80,360,160}
+                HEADERS {" ","Helyezés","Név","Névelő","Klub","Időeredmény"}
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP "Dupla kattintás: kijelölés váltása (x)"
+                ONCHANGE Nil
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONDBLCLICK Grid_Lista_DblClick()
+                ONHEADCLICK Nil
+                ONQUERYDATA Nil
+                MULTISELECT .F.
+                ALLOWEDIT .F.
+                VIRTUAL .F.
+                DYNAMICBACKCOLOR Nil
+                DYNAMICFORECOLOR Nil
+                COLUMNWHEN Nil
+                COLUMNVALID Nil
+                COLUMNCONTROLS Nil
+                SHOWHEADERS .T.
+                CELLNAVIGATION .F.
+                NOLINES .F.
+                HELPID Nil
+                IMAGE Nil
+                JUSTIFY Nil
+                ITEMCOUNT Nil
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                HEADERIMAGES Nil
+                ROWSOURCE Nil
+                COLUMNFIELDS Nil
+                ALLOWAPPEND .F.
+                ALLOWDELETE .F.
+                BUFFERED .F.
+                DYNAMICDISPLAY .F.
+                ONSAVE Nil
+                LOCKCOLUMNS 0
+            END GRID
+
+            DEFINE BUTTON Button_MindKijelol
+                ROW    700
+                COL    16
+                WIDTH  160
+                HEIGHT 32
+                ACTION Grid_Lista_MindKijelol()
+                CAPTION "Mind kijelöl"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE BUTTON Button_KijelolesTorlese
+                ROW    700
+                COL    188
+                WIDTH  160
+                HEIGHT 32
+                ACTION Grid_Lista_KijelolesTorlese()
+                CAPTION "Kijelölés törlése"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE BUTTON Button_ListaFrissit
+                ROW    700
+                COL    360
+                WIDTH  160
+                HEIGHT 32
+                ACTION Main_GridBetolt()
+                CAPTION "Lista frissítése"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+        END PAGE 
+
+        PAGE "Beállítások – elrendezés"
+
+            DEFINE LABEL Label_Hdr_T3_40
+                ROW    40
+                COL    16
+                WIDTH  1200
+                HEIGHT 20
+                VALUE "Általános"
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE LABEL Label_Szoveg_Kezdo_Ymm
+                ROW    62
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Felső kezdő margó (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Szoveg_Kezdo_Ymm
+                ROW    62
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Szoveg_Kezdo_Ymm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Szoveg_Kezdo_Ymm
+                ROW    62
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Szoveg_Kezdo_Ymm
+                ROW    62
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Szoveg_Kezdo_Ymm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Betutipus
+                ROW    62
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Betűtípus:"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE TEXTBOX Text_Betutipus
+                ROW    62
+                COL    960
+                WIDTH  220
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE LABEL Label_Oldal_Bal_Mm
+                ROW    88
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Szöveg bal széle (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Oldal_Bal_Mm
+                ROW    88
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Oldal_Bal_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Oldal_Bal_Mm
+                ROW    88
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Oldal_Bal_Mm
+                ROW    88
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Oldal_Bal_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Oldal_Jobb_Mm
+                ROW    88
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Szöveg jobb széle (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Oldal_Jobb_Mm
+                ROW    88
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Oldal_Jobb_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Oldal_Jobb_Mm
+                ROW    88
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Oldal_Jobb_Mm
+                ROW    88
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Oldal_Jobb_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Hdr_T3_118
+                ROW    118
+                COL    16
+                WIDTH  1200
+                HEIGHT 20
+                VALUE "1. sor – verseny címe"
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE LABEL Label_Cim_Ymm
+                ROW    140
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Cím Y eltolás (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Cim_Ymm
+                ROW    140
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Cim_Ymm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Cim_Ymm
+                ROW    140
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Cim_Ymm
+                ROW    140
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Cim_Ymm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Cim_Magassag_Mm
+                ROW    140
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Cím sor magasság (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Cim_Magassag_Mm
+                ROW    140
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Cim_Magassag_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Cim_Magassag_Mm
+                ROW    140
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Cim_Magassag_Mm
+                ROW    140
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Cim_Magassag_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Cim_Betumeret
+                ROW    166
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Cím betűméret (pt):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Cim_Betumeret
+                ROW    166
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Cim_Betumeret", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Cim_Betumeret
+                ROW    166
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Cim_Betumeret
+                ROW    166
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Cim_Betumeret", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE CHECKBOX Check_Cim_Felbe
+                ROW    166
+                COL    640
+                WIDTH  280
+                HEIGHT 22
+                CAPTION "Cím félkövér"
+                VALUE .F.
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+            END CHECKBOX
+
+            DEFINE LABEL Label_Hdr_T3_196
+                ROW    196
+                COL    16
+                WIDTH  1200
+                HEIGHT 20
+                VALUE "2. sor – klub"
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE LABEL Label_Klub_Ymm
+                ROW    218
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Klub Y eltolás (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Klub_Ymm
+                ROW    218
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Klub_Ymm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Klub_Ymm
+                ROW    218
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Klub_Ymm
+                ROW    218
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Klub_Ymm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Klub_Magassag_Mm
+                ROW    218
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Klub sor magasság (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Klub_Magassag_Mm
+                ROW    218
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Klub_Magassag_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Klub_Magassag_Mm
+                ROW    218
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Klub_Magassag_Mm
+                ROW    218
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Klub_Magassag_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Klub_Betumeret
+                ROW    244
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Klub betűméret (pt):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Klub_Betumeret
+                ROW    244
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Klub_Betumeret", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Klub_Betumeret
+                ROW    244
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Klub_Betumeret
+                ROW    244
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Klub_Betumeret", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE CHECKBOX Check_Klub_Felbe
+                ROW    244
+                COL    640
+                WIDTH  280
+                HEIGHT 22
+                CAPTION "Klub félkövér"
+                VALUE .F.
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+            END CHECKBOX
+
+            DEFINE LABEL Label_Hdr_T3_274
+                ROW    274
+                COL    16
+                WIDTH  1200
+                HEIGHT 20
+                VALUE "3. sor – név"
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE LABEL Label_Nev_Ymm
+                ROW    296
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Név Y eltolás (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Nev_Ymm
+                ROW    296
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Nev_Ymm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Nev_Ymm
+                ROW    296
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Nev_Ymm
+                ROW    296
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Nev_Ymm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Nev_Magassag_Mm
+                ROW    296
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Név sor magasság (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Nev_Magassag_Mm
+                ROW    296
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Nev_Magassag_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Nev_Magassag_Mm
+                ROW    296
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Nev_Magassag_Mm
+                ROW    296
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Nev_Magassag_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Nev_Betumeret
+                ROW    322
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Név betűméret (pt):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Nev_Betumeret
+                ROW    322
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Nev_Betumeret", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Nev_Betumeret
+                ROW    322
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Nev_Betumeret
+                ROW    322
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Nev_Betumeret", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE CHECKBOX Check_Nev_Felbe
+                ROW    322
+                COL    640
+                WIDTH  280
+                HEIGHT 22
+                CAPTION "Név félkövér"
+                VALUE .F.
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+            END CHECKBOX
+
+            DEFINE LABEL Label_Hdr_T3_352
+                ROW    352
+                COL    16
+                WIDTH  1200
+                HEIGHT 20
+                VALUE "Név alatti vonal és helyezés"
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE LABEL Label_NevAlattiVonal_Offset_Mm
+                ROW    374
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Vonal eltolás a betűaljtól (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_NevAlattiVonal_Offset_Mm
+                ROW    374
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("NevAlattiVonal_Offset_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_NevAlattiVonal_Offset_Mm
+                ROW    374
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_NevAlattiVonal_Offset_Mm
+                ROW    374
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("NevAlattiVonal_Offset_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_NevAlattiVonal_Bal_Mm
+                ROW    374
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Vonal bal széle (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_NevAlattiVonal_Bal_Mm
+                ROW    374
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("NevAlattiVonal_Bal_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_NevAlattiVonal_Bal_Mm
+                ROW    374
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_NevAlattiVonal_Bal_Mm
+                ROW    374
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("NevAlattiVonal_Bal_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_NevAlattiVonal_Jobb_Mm
+                ROW    400
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Vonal jobb széle (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_NevAlattiVonal_Jobb_Mm
+                ROW    400
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("NevAlattiVonal_Jobb_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_NevAlattiVonal_Jobb_Mm
+                ROW    400
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_NevAlattiVonal_Jobb_Mm
+                ROW    400
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("NevAlattiVonal_Jobb_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_NevAlattiVonal_Vastagsag_Mm
+                ROW    400
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Vonal vastagság (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_NevAlattiVonal_Vastagsag_Mm
+                ROW    400
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("NevAlattiVonal_Vastagsag_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_NevAlattiVonal_Vastagsag_Mm
+                ROW    400
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_NevAlattiVonal_Vastagsag_Mm
+                ROW    400
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("NevAlattiVonal_Vastagsag_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Helyezes_VonalAlatti_Mm
+                ROW    426
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Helyezés a vonal alatt (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Helyezes_VonalAlatti_Mm
+                ROW    426
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Helyezes_VonalAlatti_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Helyezes_VonalAlatti_Mm
+                ROW    426
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Helyezes_VonalAlatti_Mm
+                ROW    426
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Helyezes_VonalAlatti_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Helyezes_Betumeret
+                ROW    426
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Helyezés betűméret (pt):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Helyezes_Betumeret
+                ROW    426
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Helyezes_Betumeret", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Helyezes_Betumeret
+                ROW    426
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Helyezes_Betumeret
+                ROW    426
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Helyezes_Betumeret", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE CHECKBOX Check_Helyezes_Felbe
+                ROW    452
+                COL    16
+                WIDTH  280
+                HEIGHT 22
+                CAPTION "Helyezés félkövér"
+                VALUE .F.
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+            END CHECKBOX
+
+            DEFINE BUTTON Button_BeallMent_T3
+                ROW    486
+                COL    16
+                WIDTH  220
+                HEIGHT 34
+                ACTION Main_BeallitasokMentes()
+                CAPTION "Beállítások mentése"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+        END PAGE 
+
+        PAGE "Beállítások – idő / aláírás"
+
+            DEFINE LABEL Label_Hdr_T4_40
+                ROW    40
+                COL    16
+                WIDTH  1200
+                HEIGHT 20
+                VALUE "5. sor – időeredmény"
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE LABEL Label_Ido_Ymm
+                ROW    62
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Idő Y eltolás (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Ido_Ymm
+                ROW    62
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Ido_Ymm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Ido_Ymm
+                ROW    62
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Ido_Ymm
+                ROW    62
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Ido_Ymm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Ido_Magassag_Mm
+                ROW    62
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Idő sor magasság (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Ido_Magassag_Mm
+                ROW    62
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Ido_Magassag_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Ido_Magassag_Mm
+                ROW    62
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Ido_Magassag_Mm
+                ROW    62
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Ido_Magassag_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Ido_Betumeret
+                ROW    88
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Idő betűméret (pt):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Ido_Betumeret
+                ROW    88
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Ido_Betumeret", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Ido_Betumeret
+                ROW    88
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Ido_Betumeret
+                ROW    88
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Ido_Betumeret", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE CHECKBOX Check_Ido_Felbe
+                ROW    88
+                COL    640
+                WIDTH  280
+                HEIGHT 22
+                CAPTION "Idő félkövér"
+                VALUE .F.
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+            END CHECKBOX
+
+            DEFINE LABEL Label_Hdr_T4_118
+                ROW    118
+                COL    16
+                WIDTH  1200
+                HEIGHT 20
+                VALUE "6. sor – idő felirat"
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE LABEL Label_IdoFelirat_Ymm
+                ROW    140
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Időfelirat Y eltolás (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_IdoFelirat_Ymm
+                ROW    140
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("IdoFelirat_Ymm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_IdoFelirat_Ymm
+                ROW    140
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_IdoFelirat_Ymm
+                ROW    140
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("IdoFelirat_Ymm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_IdoFelirat_Magassag_Mm
+                ROW    140
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Időfelirat sor magasság (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_IdoFelirat_Magassag_Mm
+                ROW    140
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("IdoFelirat_Magassag_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_IdoFelirat_Magassag_Mm
+                ROW    140
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_IdoFelirat_Magassag_Mm
+                ROW    140
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("IdoFelirat_Magassag_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_IdoFelirat_Betumeret
+                ROW    166
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Időfelirat betűméret (pt):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_IdoFelirat_Betumeret
+                ROW    166
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("IdoFelirat_Betumeret", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_IdoFelirat_Betumeret
+                ROW    166
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_IdoFelirat_Betumeret
+                ROW    166
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("IdoFelirat_Betumeret", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE CHECKBOX Check_IdoFelirat_Felbe
+                ROW    166
+                COL    640
+                WIDTH  280
+                HEIGHT 22
+                CAPTION "Időfelirat félkövér"
+                VALUE .F.
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+            END CHECKBOX
+
+            DEFINE LABEL Label_Hdr_T4_196
+                ROW    196
+                COL    16
+                WIDTH  1200
+                HEIGHT 20
+                VALUE "7. sor – dátum / hely"
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE LABEL Label_Datum_Ymm
+                ROW    218
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Dátum Y eltolás (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Datum_Ymm
+                ROW    218
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Datum_Ymm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Datum_Ymm
+                ROW    218
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Datum_Ymm
+                ROW    218
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Datum_Ymm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Datum_Magassag_Mm
+                ROW    218
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Dátum sor magasság (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Datum_Magassag_Mm
+                ROW    218
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Datum_Magassag_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Datum_Magassag_Mm
+                ROW    218
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Datum_Magassag_Mm
+                ROW    218
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Datum_Magassag_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Datum_Betumeret
+                ROW    244
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Dátum betűméret (pt):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Datum_Betumeret
+                ROW    244
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Datum_Betumeret", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Datum_Betumeret
+                ROW    244
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Datum_Betumeret
+                ROW    244
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Datum_Betumeret", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE CHECKBOX Check_Datum_Felbe
+                ROW    244
+                COL    640
+                WIDTH  280
+                HEIGHT 22
+                CAPTION "Dátum félkövér"
+                VALUE .F.
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+            END CHECKBOX
+
+            DEFINE LABEL Label_Hdr_T4_274
+                ROW    274
+                COL    16
+                WIDTH  1200
+                HEIGHT 20
+                VALUE "Aláírás vonalak"
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE LABEL Label_AlairasVonal_Ymm
+                ROW    296
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Aláírás vonal Y (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_AlairasVonal_Ymm
+                ROW    296
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasVonal_Ymm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_AlairasVonal_Ymm
+                ROW    296
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_AlairasVonal_Ymm
+                ROW    296
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasVonal_Ymm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_AlairasVonal_Vastagsag_Mm
+                ROW    296
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Aláírás vonal vastagság (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_AlairasVonal_Vastagsag_Mm
+                ROW    296
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasVonal_Vastagsag_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_AlairasVonal_Vastagsag_Mm
+                ROW    296
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_AlairasVonal_Vastagsag_Mm
+                ROW    296
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasVonal_Vastagsag_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_AlairasBal_Vonal_Bal_Mm
+                ROW    322
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Bal aláírás vonal bal (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_AlairasBal_Vonal_Bal_Mm
+                ROW    322
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasBal_Vonal_Bal_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_AlairasBal_Vonal_Bal_Mm
+                ROW    322
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_AlairasBal_Vonal_Bal_Mm
+                ROW    322
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasBal_Vonal_Bal_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_AlairasBal_Vonal_Jobb_Mm
+                ROW    322
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Bal aláírás vonal jobb (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_AlairasBal_Vonal_Jobb_Mm
+                ROW    322
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasBal_Vonal_Jobb_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_AlairasBal_Vonal_Jobb_Mm
+                ROW    322
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_AlairasBal_Vonal_Jobb_Mm
+                ROW    322
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasBal_Vonal_Jobb_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_AlairasJobb_Vonal_Bal_Mm
+                ROW    348
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Jobb aláírás vonal bal (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_AlairasJobb_Vonal_Bal_Mm
+                ROW    348
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasJobb_Vonal_Bal_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_AlairasJobb_Vonal_Bal_Mm
+                ROW    348
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_AlairasJobb_Vonal_Bal_Mm
+                ROW    348
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasJobb_Vonal_Bal_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_AlairasJobb_Vonal_Jobb_Mm
+                ROW    348
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Jobb aláírás vonal jobb (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_AlairasJobb_Vonal_Jobb_Mm
+                ROW    348
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasJobb_Vonal_Jobb_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_AlairasJobb_Vonal_Jobb_Mm
+                ROW    348
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_AlairasJobb_Vonal_Jobb_Mm
+                ROW    348
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasJobb_Vonal_Jobb_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Hdr_T4_378
+                ROW    378
+                COL    16
+                WIDTH  1200
+                HEIGHT 20
+                VALUE "Aláírás szövegek"
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE LABEL Label_Alairas_VonalAlatti_Mm
+                ROW    400
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Aláírás szöveg a vonal alatt (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Alairas_VonalAlatti_Mm
+                ROW    400
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Alairas_VonalAlatti_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Alairas_VonalAlatti_Mm
+                ROW    400
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Alairas_VonalAlatti_Mm
+                ROW    400
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Alairas_VonalAlatti_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_Alairas_Betumeret
+                ROW    400
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Aláírás betűméret (pt):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_Alairas_Betumeret
+                ROW    400
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Alairas_Betumeret", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_Alairas_Betumeret
+                ROW    400
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_Alairas_Betumeret
+                ROW    400
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("Alairas_Betumeret", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE CHECKBOX Check_Alairas_Felbe
+                ROW    426
+                COL    16
+                WIDTH  280
+                HEIGHT 22
+                CAPTION "Aláírás félkövér"
+                VALUE .F.
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+            END CHECKBOX
+
+            DEFINE LABEL Label_AlairasBal_Bal_Mm
+                ROW    426
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Bal aláírás szöveg bal (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_AlairasBal_Bal_Mm
+                ROW    426
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasBal_Bal_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_AlairasBal_Bal_Mm
+                ROW    426
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_AlairasBal_Bal_Mm
+                ROW    426
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasBal_Bal_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_AlairasBal_Jobb_Mm
+                ROW    452
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Bal aláírás szöveg jobb (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_AlairasBal_Jobb_Mm
+                ROW    452
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasBal_Jobb_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_AlairasBal_Jobb_Mm
+                ROW    452
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_AlairasBal_Jobb_Mm
+                ROW    452
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasBal_Jobb_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_AlairasJobb_Bal_Mm
+                ROW    452
+                COL    640
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Jobb aláírás szöveg bal (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_AlairasJobb_Bal_Mm
+                ROW    452
+                COL    960
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasJobb_Bal_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_AlairasJobb_Bal_Mm
+                ROW    452
+                COL    988
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_AlairasJobb_Bal_Mm
+                ROW    452
+                COL    1070
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasJobb_Bal_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE LABEL Label_AlairasJobb_Jobb_Mm
+                ROW    478
+                COL    16
+                WIDTH  300
+                HEIGHT 22
+                VALUE "Jobb aláírás szöveg jobb (mm):"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
+
+            DEFINE BUTTON BtnM_AlairasJobb_Jobb_Mm
+                ROW    478
+                COL    330
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasJobb_Jobb_Mm", -1)
+                CAPTION "-"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE TEXTBOX Text_AlairasJobb_Jobb_Mm
+                ROW    478
+                COL    358
+                WIDTH  80
+                HEIGHT 22
+                FONTNAME "Arial"
+                FONTSIZE 10
+                TOOLTIP ""
+                ONCHANGE BeallitasAlkalmaz()
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONENTER Nil
+                HELPID Nil
+                TABSTOP .T.
+                VISIBLE .T.
+                READONLY .F.
+                RIGHTALIGN .F.
+                DISABLEDBACKCOLOR Nil
+                DISABLEDFONTCOLOR Nil
+                CASECONVERT NONE
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+                INPUTMASK Nil
+                FORMAT Nil
+                VALUE ""
+            END TEXTBOX
+
+            DEFINE BUTTON BtnP_AlairasJobb_Jobb_Mm
+                ROW    478
+                COL    440
+                WIDTH  26
+                HEIGHT 22
+                ACTION BeallitasLepes("AlairasJobb_Jobb_Mm", 1)
+                CAPTION "+"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+            DEFINE BUTTON Button_BeallMent_T4
+                ROW    512
+                COL    16
+                WIDTH  220
+                HEIGHT 34
+                ACTION Main_BeallitasokMentes()
+                CAPTION "Beállítások mentése"
+                FONTNAME "Arial"
+                FONTSIZE 11
+                TOOLTIP ""
+                FONTBOLD .T.
+                FONTITALIC .F.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                ONGOTFOCUS Nil
+                ONLOSTFOCUS Nil
+                HELPID Nil
+                FLAT .F.
+                TABSTOP .T.
+                VISIBLE .T.
+                TRANSPARENT .F.
+                MULTILINE .F.
+                PICTURE Nil
+                PICTALIGNMENT TOP
+            END BUTTON
+
+        END PAGE 
+
+    END TAB 
 
 END WINDOW
 
