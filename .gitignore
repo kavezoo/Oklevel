@@ -15,7 +15,8 @@
 *.prn
 *.bak
 *.txt
-*.exe
+*.pdf
+#*.exe
 # *.pdf
 *.old
 *.psd
