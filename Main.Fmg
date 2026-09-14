@@ -1,0 +1,465 @@
+* HMG-IDE UNICODE Form Designer Generated Code
+* (c) Roberto Lopez - http://sites.google.com/site/hmgweb
+
+DEFINE WINDOW TEMPLATE AT 301 , 338 WIDTH 1072 HEIGHT 706 VIRTUAL WIDTH Nil VIRTUAL HEIGHT Nil TITLE "Országos Lassúsági Hagyományőrző Piapszívóverseny oklevél nyomtató program • v1.20 • zsfoto@gmail.com" ICON NIL MAIN CURSOR NIL ON INIT Main_OnInit() ON RELEASE Main_OnRelease() ON INTERACTIVECLOSE Nil ON MOUSECLICK Nil ON MOUSEDRAG Nil ON MOUSEMOVE Nil ON SIZE Nil ON MAXIMIZE Nil ON MINIMIZE Nil ON PAINT Nil BACKCOLOR Nil NOTIFYICON NIL NOTIFYTOOLTIP NIL ON NOTIFYCLICK Nil ON GOTFOCUS Nil ON LOSTFOCUS Nil ON SCROLLUP Nil ON SCROLLDOWN Nil ON SCROLLLEFT Nil ON SCROLLRIGHT Nil ON HSCROLLBOX Nil ON VSCROLLBOX Nil
+
+    DEFINE BUTTON Button_PdfLetrehozas
+        ROW    560
+        COL    430
+        WIDTH  190
+        HEIGHT 50
+        ACTION Main_CreatePdf()
+        CAPTION "PDF létrehozása"
+        FONTNAME "Arial"
+        FONTSIZE 12
+        TOOLTIP ""
+        FONTBOLD .T.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        ONGOTFOCUS Nil
+        ONLOSTFOCUS Nil
+        HELPID Nil
+        FLAT .F.
+        TABSTOP .T.
+        VISIBLE .T.
+        TRANSPARENT .F.
+        MULTILINE .F.
+        PICTURE Nil
+        PICTALIGNMENT TOP
+    END BUTTON
+
+    DEFINE LABEL Label_XlsxFajl
+        ROW    20
+        COL    170
+        WIDTH  790
+        HEIGHT 30
+        VALUE ""
+        FONTNAME "Arial"
+        FONTSIZE 12
+        TOOLTIP ""
+        FONTBOLD .T.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        HELPID Nil
+        VISIBLE .T.
+        TRANSPARENT .F.
+        ACTION Nil
+        AUTOSIZE .F.
+        BACKCOLOR NIL
+        FONTCOLOR {0,64,128}
+    END LABEL
+
+    DEFINE BUTTON Button_FajlValaszt
+        ROW    20
+        COL    970
+        WIDTH  36
+        HEIGHT 28
+        ACTION Main_SelectFile()
+        CAPTION "..."
+        FONTNAME "Arial"
+        FONTSIZE 14
+        TOOLTIP ""
+        FONTBOLD .F.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        ONGOTFOCUS Nil
+        ONLOSTFOCUS Nil
+        HELPID Nil
+        FLAT .F.
+        TABSTOP .T.
+        VISIBLE .T.
+        TRANSPARENT .F.
+        MULTILINE .F.
+        PICTURE Nil
+        PICTALIGNMENT TOP
+    END BUTTON
+
+    DEFINE LABEL Label_ImportFelirat
+        ROW    20
+        COL    20
+        WIDTH  140
+        HEIGHT 20
+        VALUE "Importálandó fájl:"
+        FONTNAME "Arial"
+        FONTSIZE 12
+        TOOLTIP ""
+        FONTBOLD .T.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        HELPID Nil
+        VISIBLE .T.
+        TRANSPARENT .F.
+        ACTION Nil
+        AUTOSIZE .F.
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+    END LABEL
+
+    DEFINE PROGRESSBAR ProgressBar_Pdf
+        ROW    640
+        COL    0
+        WIDTH  1072
+        HEIGHT 30
+        RANGEMIN 0
+        RANGEMAX 100
+        VALUE 0
+        TOOLTIP ""
+        HELPID Nil
+        VISIBLE .T.
+        SMOOTH .F.
+        VERTICAL .F. 
+        BACKCOLOR NIL
+        FORECOLOR NIL
+    END PROGRESSBAR
+
+    DEFINE TEXTBOX Text_VersenyCim
+        ROW    90
+        COL    30
+        WIDTH  980
+        HEIGHT 30
+        FONTNAME "Arial"
+        FONTSIZE 14
+        TOOLTIP ""
+        ONCHANGE Nil
+        ONGOTFOCUS Nil
+        ONLOSTFOCUS Nil
+        FONTBOLD .T.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        ONENTER Nil
+        HELPID Nil
+        TABSTOP .T.
+        VISIBLE .T.
+        READONLY .F.
+        RIGHTALIGN .F.
+        DISABLEDBACKCOLOR Nil
+        DISABLEDFONTCOLOR Nil
+        CASECONVERT NONE
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+        INPUTMASK Nil
+        FORMAT Nil
+        VALUE "Lassúsági pipaszívás magyar bajnoka a mai versenyünkön"
+    END TEXTBOX
+
+    DEFINE TEXTBOX Text_KlubToldalek
+        ROW    135
+        COL    360
+        WIDTH  400
+        HEIGHT 30
+        FONTNAME "Arial"
+        FONTSIZE 14
+        TOOLTIP ""
+        ONCHANGE Nil
+        ONGOTFOCUS Nil
+        ONLOSTFOCUS Nil
+        FONTBOLD .T.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        ONENTER Nil
+        HELPID Nil
+        TABSTOP .T.
+        VISIBLE .T.
+        READONLY .F.
+        RIGHTALIGN .F.
+        DISABLEDBACKCOLOR Nil
+        DISABLEDFONTCOLOR Nil
+        CASECONVERT NONE
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+        INPUTMASK Nil
+        FORMAT Nil
+        VALUE "csapatának tagjaként"
+    END TEXTBOX
+
+    DEFINE LABEL Label_KlubMinta
+        ROW    140
+        COL    40
+        WIDTH  300
+        HEIGHT 30
+        VALUE "A(Z) XYZ Pipaklub"
+        FONTNAME "Arial"
+        FONTSIZE 12
+        TOOLTIP ""
+        FONTBOLD .F.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        HELPID Nil
+        VISIBLE .T.
+        TRANSPARENT .F.
+        ACTION Nil
+        AUTOSIZE .F.
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+        RIGHTALIGN .T. 
+    END LABEL
+
+    DEFINE LABEL Label_NevMinta
+        ROW    190
+        COL    210
+        WIDTH  540
+        HEIGHT 40
+        VALUE "GIPSZ JAKAB JÓZSEF"
+        FONTNAME "Arial"
+        FONTSIZE 16
+        TOOLTIP ""
+        FONTBOLD .T.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        HELPID Nil
+        VISIBLE .T.
+        TRANSPARENT .F.
+        ACTION Nil
+        AUTOSIZE .F.
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+        CENTERALIGN .T. 
+    END LABEL
+
+    DEFINE TEXTBOX Text_HelyezesSzoveg
+        ROW    240
+        COL    370
+        WIDTH  390
+        HEIGHT 30
+        FONTNAME "Arial"
+        FONTSIZE 14
+        TOOLTIP ""
+        ONCHANGE Nil
+        ONGOTFOCUS Nil
+        ONLOSTFOCUS Nil
+        FONTBOLD .T.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        ONENTER Nil
+        HELPID Nil
+        TABSTOP .T.
+        VISIBLE .T.
+        READONLY .F.
+        RIGHTALIGN .F.
+        DISABLEDBACKCOLOR Nil
+        DISABLEDFONTCOLOR Nil
+        CASECONVERT NONE
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+        INPUTMASK Nil
+        FORMAT Nil
+        VALUE "helyezést ért el"
+    END TEXTBOX
+
+    DEFINE LABEL Label_HelyezesMinta
+        ROW    240
+        COL    240
+        WIDTH  120
+        HEIGHT 24
+        VALUE "6."
+        FONTNAME "Arial"
+        FONTSIZE 16
+        TOOLTIP ""
+        FONTBOLD .F.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        HELPID Nil
+        VISIBLE .T.
+        TRANSPARENT .F.
+        ACTION Nil
+        AUTOSIZE .F.
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+        RIGHTALIGN .T. 
+    END LABEL
+
+    DEFINE LABEL Label_IdoMinta
+        ROW    290
+        COL    360
+        WIDTH  300
+        HEIGHT 30
+        VALUE "1 óra 13 perc és 40 mp"
+        FONTNAME "Arial"
+        FONTSIZE 20
+        TOOLTIP ""
+        FONTBOLD .T.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        HELPID Nil
+        VISIBLE .T.
+        TRANSPARENT .F.
+        ACTION Nil
+        AUTOSIZE .F.
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+        CENTERALIGN .T. 
+    END LABEL
+
+    DEFINE LABEL Label_IdoFelirat
+        ROW    330
+        COL    380
+        WIDTH  220
+        HEIGHT 30
+        VALUE "időeredménnyel"
+        FONTNAME "Arial"
+        FONTSIZE 16
+        TOOLTIP ""
+        FONTBOLD .F.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        HELPID Nil
+        VISIBLE .T.
+        TRANSPARENT .F.
+        ACTION Nil
+        AUTOSIZE .F.
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+        CENTERALIGN .T. 
+    END LABEL
+
+    DEFINE TEXTBOX Text_Datum
+        ROW    380
+        COL    370
+        WIDTH  390
+        HEIGHT 30
+        FONTNAME "Arial"
+        FONTSIZE 14
+        TOOLTIP ""
+        ONCHANGE Nil
+        ONGOTFOCUS Nil
+        ONLOSTFOCUS Nil
+        FONTBOLD .T.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        ONENTER Nil
+        HELPID Nil
+        TABSTOP .T.
+        VISIBLE .T.
+        READONLY .F.
+        RIGHTALIGN .F.
+        DISABLEDBACKCOLOR Nil
+        DISABLEDFONTCOLOR Nil
+        CASECONVERT NONE
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+        INPUTMASK Nil
+        FORMAT Nil
+        VALUE "Ibafa, 2026. április 11."
+    END TEXTBOX
+
+    DEFINE LABEL Label_AlairasVonalBal
+        ROW    480
+        COL    40
+        WIDTH  460
+        HEIGHT 30
+        VALUE "........................................................................................................................................................"
+        FONTNAME "Arial"
+        FONTSIZE 9
+        TOOLTIP ""
+        FONTBOLD .F.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        HELPID Nil
+        VISIBLE .T.
+        TRANSPARENT .F.
+        ACTION Nil
+        AUTOSIZE .F.
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+    END LABEL
+
+    DEFINE LABEL Label_AlairasVonalJobb
+        ROW    480
+        COL    560
+        WIDTH  470
+        HEIGHT 30
+        VALUE "........................................................................................................................................................"
+        FONTNAME "Arial"
+        FONTSIZE 9
+        TOOLTIP ""
+        FONTBOLD .F.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        HELPID Nil
+        VISIBLE .T.
+        TRANSPARENT .F.
+        ACTION Nil
+        AUTOSIZE .F.
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+    END LABEL
+
+    DEFINE TEXTBOX Text_AlairasBal
+        ROW    500
+        COL    40
+        WIDTH  450
+        HEIGHT 30
+        FONTNAME "Arial"
+        FONTSIZE 14
+        TOOLTIP ""
+        ONCHANGE Nil
+        ONGOTFOCUS Nil
+        ONLOSTFOCUS Nil
+        FONTBOLD .T.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        ONENTER Nil
+        HELPID Nil
+        TABSTOP .T.
+        VISIBLE .T.
+        READONLY .F.
+        RIGHTALIGN .F.
+        DISABLEDBACKCOLOR Nil
+        DISABLEDFONTCOLOR Nil
+        CASECONVERT NONE
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+        INPUTMASK Nil
+        FORMAT Nil
+        VALUE "Magyar Pipaklub Egyesület"
+    END TEXTBOX
+
+    DEFINE TEXTBOX Text_AlairasJobb
+        ROW    500
+        COL    560
+        WIDTH  450
+        HEIGHT 30
+        FONTNAME "Arial"
+        FONTSIZE 14
+        TOOLTIP ""
+        ONCHANGE Nil
+        ONGOTFOCUS Nil
+        ONLOSTFOCUS Nil
+        FONTBOLD .T.
+        FONTITALIC .F.
+        FONTUNDERLINE .F.
+        FONTSTRIKEOUT .F.
+        ONENTER Nil
+        HELPID Nil
+        TABSTOP .T.
+        VISIBLE .T.
+        READONLY .F.
+        RIGHTALIGN .F.
+        DISABLEDBACKCOLOR Nil
+        DISABLEDFONTCOLOR Nil
+        CASECONVERT NONE
+        BACKCOLOR NIL
+        FONTCOLOR NIL
+        INPUTMASK Nil
+        FORMAT Nil
+        VALUE "Ibafai Pipaklub"
+    END TEXTBOX
+
+END WINDOW
+
