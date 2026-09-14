@@ -1,0 +1,25 @@
+# git rm -r --cached FOLDER
+.hbmk
+.hbmk/*.*
+.hbmk/win/mingw/*.c
+.hbmk/win/mingw/*.o
+.hbmk/win/mingw/*.*
+.hbmk/win/mingw64/*.*
+#*.jpg
+#*.rc
+#*.png
+#*.dbf
+*.log
+*.Htm
+*.hbc
+*.prn
+*.bak
+*.txt
+*.exe
+# *.pdf
+*.old
+*.psd
+_*.h
+_*.o
+_*.rc
+oklevel.ini
