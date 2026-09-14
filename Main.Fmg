@@ -4,8 +4,8 @@
 DEFINE WINDOW TEMPLATE AT 146 , 450 WIDTH 1240 HEIGHT 880 VIRTUAL WIDTH Nil VIRTUAL HEIGHT Nil TITLE "Országos Lassúsági Hagyományőrző Piapszívóverseny oklevél nyomtató program • v1.30 • zsfoto@gmail.com" ICON NIL MAIN CURSOR NIL ON INIT Main_OnInit() ON RELEASE Main_OnRelease() ON INTERACTIVECLOSE Nil ON MOUSECLICK Nil ON MOUSEDRAG Nil ON MOUSEMOVE Nil ON SIZE Nil ON MAXIMIZE Nil ON MINIMIZE Nil ON PAINT Nil BACKCOLOR Nil NOTIFYICON NIL NOTIFYTOOLTIP NIL ON NOTIFYCLICK Nil ON GOTFOCUS Nil ON LOSTFOCUS Nil ON SCROLLUP Nil ON SCROLLDOWN Nil ON SCROLLLEFT Nil ON SCROLLRIGHT Nil ON HSCROLLBOX Nil ON VSCROLLBOX Nil
 
     DEFINE BUTTON Button_PdfLetrehozas
-        ROW    790
-        COL    530
+        ROW    780
+        COL    520
         WIDTH  220
         HEIGHT 44
         ACTION Main_CreatePdf()
@@ -46,7 +46,7 @@ DEFINE WINDOW TEMPLATE AT 146 , 450 WIDTH 1240 HEIGHT 880 VIRTUAL WIDTH Nil VIRT
         FORECOLOR NIL
     END PROGRESSBAR
 
-    DEFINE TAB Tab_Main AT 8 , 8 WIDTH 1202 HEIGHT 752 VALUE 1 FONT "Arial" SIZE 10 TOOLTIP "" ON CHANGE Nil
+    DEFINE TAB Tab_Main AT 8 , 8 WIDTH 1202 HEIGHT 752 VALUE 1 FONT "Arial" SIZE 12 BOLD TOOLTIP "" ON CHANGE Nil
 
         PAGE "Alapadatok"
 
@@ -479,12 +479,12 @@ DEFINE WINDOW TEMPLATE AT 146 , 450 WIDTH 1240 HEIGHT 880 VIRTUAL WIDTH Nil VIRT
                 WIDTHS {40,90,280,80,360,160}
                 HEADERS {" ","Helyezés","Név","Névelő","Klub","Időeredmény"}
                 FONTNAME "Arial"
-                FONTSIZE 11
+                FONTSIZE 14
                 TOOLTIP "Dupla kattintás: kijelölés váltása (x)"
                 ONCHANGE Nil
                 ONGOTFOCUS Nil
                 ONLOSTFOCUS Nil
-                FONTBOLD .F.
+                FONTBOLD .T.
                 FONTITALIC .F.
                 FONTUNDERLINE .F.
                 FONTSTRIKEOUT .F.
@@ -504,7 +504,7 @@ DEFINE WINDOW TEMPLATE AT 146 , 450 WIDTH 1240 HEIGHT 880 VIRTUAL WIDTH Nil VIRT
                 NOLINES .F.
                 HELPID Nil
                 IMAGE Nil
-                JUSTIFY Nil
+                JUSTIFY {2,2,0,2,0,2}
                 ITEMCOUNT Nil
                 BACKCOLOR NIL
                 FONTCOLOR NIL
@@ -596,6 +596,28 @@ DEFINE WINDOW TEMPLATE AT 146 , 450 WIDTH 1240 HEIGHT 880 VIRTUAL WIDTH Nil VIRT
                 PICTURE Nil
                 PICTALIGNMENT TOP
             END BUTTON
+
+            DEFINE LABEL Label_1
+                ROW    690
+                COL    1002
+                WIDTH  180
+                HEIGHT 20
+                VALUE "Duplaklikkelés sor bejelölése"
+                FONTNAME "Arial"
+                FONTSIZE 9
+                TOOLTIP ""
+                FONTBOLD .F.
+                FONTITALIC .T.
+                FONTUNDERLINE .F.
+                FONTSTRIKEOUT .F.
+                HELPID Nil
+                VISIBLE .T.
+                TRANSPARENT .F.
+                ACTION Nil
+                AUTOSIZE .F.
+                BACKCOLOR NIL
+                FONTCOLOR NIL
+            END LABEL
 
         END PAGE 
 
